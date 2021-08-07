@@ -5,10 +5,10 @@
     "node": "6.11.1"
   },
   "description": "CRM server side",
-  "main": "app.js",
+  "main": "App.js",
   "scripts": {
     "start": "node app",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix Client && npm run build --prefix Client"
   },
   "keywords": [
     "CRM",
