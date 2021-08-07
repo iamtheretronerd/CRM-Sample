@@ -1,0 +1,50 @@
+<!-- <br /><br />
+<button type="button" class="btn btn-danger"  style="float: right; margin-right: 5%;">Log Out</button>
+<br /><br/>
+<div class="input-group mb-3">
+    <input type="text" class="form-control" placeholder="New Information" aria-label="Recipient's username" aria-describedby="basic-addon2" id="message">
+    <div class="input-group-append">
+        <button class="btn btn-outline-secondary" type="button" >Send Message</button>
+    </div>
+</div>
+<br /><br/>
+<div class="card">
+    <div class="card-body">
+        <div class="card-title">Your Customers</div>
+        
+    </div>
+</div> -->
+
+
+<div id="container">
+
+    <div id="leftThing">
+      <div class="content">
+        <div class="text">Send Notes to User</div>
+            <div class="field">
+                <span class="fas fa-envelope"></span>
+                <input type="text" required placeholder="Email">
+            </div>
+          <div class="field" style="height: 100px;">
+            <span class="fas fa-sticky-note"></span>
+            <textarea rows="4" cols="50" name="comment" form="usrform" id="message" placeholder="Enter note here"></textarea>
+          </div>
+          <button (click)="send()">Send note</button>
+          <button class="red" (click)="logout()">Logout</button>
+      </div>
+    
+    </div>
+  
+  
+    <div id="rightThing">
+      <div class="content"style="width: 90%; height:75%; ">
+        <div class="text">Your Customers</div>
+        <div class="message" *ngFor="let customer of Customers">
+                <h5>Name: {{customer.Name}}</h5>
+                <h5>Email: {{customer.Email}}</h5>
+            </div>
+        </div>
+          
+    </div>
+    
+    </div>

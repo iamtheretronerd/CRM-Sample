@@ -1,0 +1,62 @@
+<!-- <br/>
+<button type="button" class="btn btn-danger" (click)="logout()" style="float: right; margin-right: 5%;">Log Out</button>
+<br/>
+<br/>
+<div class="card">
+    <div class="card-body">
+        <div class="card-title">New Information and Messages</div>
+        
+    </div>
+</div>
+<div class="input-group mb-3">
+    <label class="input-group-text" for="inputGroupSelect01">Manager Review</label>
+    <select class="form-select" id="userType" aria-placeholder="Choose" >
+      <option value="1"><img src="https://dlyaswanth.github.io/highlight.svg"/></option>
+      <option value="2"><img src="https://dlyaswanth.github.io/highlight.svg"/><img src="https://dlyaswanth.github.io/highlight.svg"/></option>
+      <option value="3"><img src="https://dlyaswanth.github.io/highlight.svg"/><img src="https://dlyaswanth.github.io/highlight.svg"/><img src="https://dlyaswanth.github.io/highlight.svg"/></option>
+      <option value="4"><img src="https://dlyaswanth.github.io/highlight.svg"/><img src="https://dlyaswanth.github.io/highlight.svg"/><img src="https://dlyaswanth.github.io/highlight.svg"/><img src="https://dlyaswanth.github.io/highlight.svg"/></option>
+      <option value="5"><img src="https://dlyaswanth.github.io/highlight.svg"/><img src="https://dlyaswanth.github.io/highlight.svg"/><img src="https://dlyaswanth.github.io/highlight.svg"/><img src="https://dlyaswanth.github.io/highlight.svg"/><img src="https://dlyaswanth.github.io/highlight.svg"/></option>
+    </select>
+  </div>
+  <button type="button" class="btn btn-success" (click)="post()" >Post</button>  -->
+
+  
+<div id="container">
+
+    <div id="leftThing">
+      <div class="content">
+   
+        <div class="text">Rate a manager</div>
+        <div class="field">
+              <select name="users" id="value">
+                <option value="1">Poor</option>
+                <option value="2">Satisfied</option>
+                <option value="3">Average</option>
+                <option value="4">Good</option>
+                <option value="5">Awesome</option>
+            </select>
+        </div>
+        <button  (click)="post()" >Rate Manager</button>
+        <button  (click)="logout()"  class="red">Sign Out</button>
+    </div>
+    
+    </div>
+  
+  
+    <div id="rightThing">
+      <div class="content"style="width: 90%; height:75%; ">
+        <div class="text">Message from your manager</div>
+            <div *ngFor="let message of Messages"> <div class="message">
+                <div>Manager: {{message.message}}</div>
+            </div>
+                <br />
+            </div>
+        </div>
+          
+  
+  
+    </div>
+    
+    </div>
+
+  
