@@ -37,7 +37,7 @@ router.post('/review',async(req,res)=>{
     .then(result=>{
         manager=result[0].Manager;
     })
-    await Manager.findOneAndUpdate(manager,{
+    await Manager.findOneAndUpdate({"name":manager},{
         $set:{"reviews":rating}},
         {
             new:true,
