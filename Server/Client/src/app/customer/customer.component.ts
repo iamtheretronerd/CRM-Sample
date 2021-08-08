@@ -15,6 +15,7 @@ export class CustomerComponent implements OnInit {
     this.router.navigateByUrl('/login').then();
   }
   post():void{
+    this.toastr.info('Please Wait !' );
     const headers={'content-type':'application/json'};
     const email=localStorage.getItem('CRM-Customer');
     const review=(<HTMLInputElement>document.getElementById('value')).value;
