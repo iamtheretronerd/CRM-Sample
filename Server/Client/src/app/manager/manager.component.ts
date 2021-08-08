@@ -14,7 +14,7 @@ export class ManagerComponent implements OnInit {
     const headers={'content-type':'application/json'};
     const userName=localStorage.getItem('CRM-Manager');
     const body={"email":userName};
-    this.httpClient.post('/getCustomers',body,{'headers':headers})
+    this.httpClient.post('getCustomers',body,{'headers':headers})
     .subscribe(result=>{
       this.Customers=result;
       //console.log(result)
@@ -32,7 +32,7 @@ export class ManagerComponent implements OnInit {
     {
       const userName=(<HTMLInputElement>document.getElementById('email')).value;
       const body={"email":userName,"message":message};
-      this.httpClient.post('/sendMessage',body,{'headers':headers})
+      this.httpClient.post('sendMessage',body,{'headers':headers})
       .subscribe(result=>{
         (<HTMLInputElement>document.getElementById('message')).value='';
         this.toastr.info('Please Wait !');
