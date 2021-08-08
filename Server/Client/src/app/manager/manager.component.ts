@@ -30,12 +30,13 @@ export class ManagerComponent implements OnInit {
     }
     else
     {
+      this.toastr.info('Please Wait !' );
       const userName=(<HTMLInputElement>document.getElementById('email')).value;
       const body={"email":userName,"message":message};
       this.httpClient.post('sendMessage',body,{'headers':headers})
       .subscribe(result=>{
         (<HTMLInputElement>document.getElementById('message')).value='';
-        this.toastr.info('Please Wait !');
+       // this.toastr.info('Please Wait !');
         this.toastr.success('Message Sent !');
       })
     }
