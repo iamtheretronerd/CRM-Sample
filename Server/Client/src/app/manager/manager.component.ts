@@ -20,7 +20,7 @@ export class ManagerComponent implements OnInit {
       this.Customers=result;
       //console.log(result)
     })
-    this.httpClient.get('getReview',body,{'headers':headers})
+    this.httpClient.post('getReview',body,{'headers':headers})
      .subscribe(result=>{
       this.reviews=result;
       //console.log(result)
