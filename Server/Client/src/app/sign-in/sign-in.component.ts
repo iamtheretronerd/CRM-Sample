@@ -26,7 +26,7 @@ export class SignInComponent implements OnInit {
       //console.log(userName,password,type)
       const headers={'content-type':'application/json'};
       const body={"email":userName,"password":password,"type":type};
-      const signurl='/login'
+      const signurl='login'
       this.httpClient.post(signurl,body,{'headers':headers})
       .subscribe(res=>{
         this.toastr.info('Please Wait !');
