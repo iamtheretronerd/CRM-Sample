@@ -11,6 +11,14 @@ router.post('/getCustomers', async (req,res)=>{
         res.send(result[0].Customers)
     })
 })
+router.post('/getReview', async (req,res)=>{
+    Manager.find({email:req.body.email})
+    .then(result=>{
+        // console.log(result[0].Customers);
+        // console.log(result[0].name);
+        res.send(result[0].reviews)
+    })
+})
 router.post('/sendMessage', async (req,res)=>{
     const {email,message}=req.body;
         Customer.findOneAndUpdate({"email":email}, {
