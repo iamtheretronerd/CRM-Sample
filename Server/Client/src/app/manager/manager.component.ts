@@ -30,7 +30,7 @@ export class ManagerComponent implements OnInit {
     }
     else
     {
-      const userName=localStorage.getItem('CRM-Manager');
+      const userName=(<HTMLInputElement>document.getElementById('email')).value;
       const body={"email":userName,"message":message};
       this.httpClient.post('/sendMessage',body,{'headers':headers})
       .subscribe(result=>{
