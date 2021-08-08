@@ -29,6 +29,7 @@ export class AdminComponent implements OnInit {
     }
     else
     {
+      this.toastr.info('Please Wait !');
       console.log(userName,password,type)
       const headers={'content-type':'application/json'};
       let body;
@@ -39,7 +40,6 @@ export class AdminComponent implements OnInit {
       const signurl='signup'
       this.httpClient.post(signurl,body,{'headers':headers})
       .subscribe(res=>{
-        this.toastr.info('Please Wait !');
         this.toastr.success(`${type} Account Saved!`);
       },
         err=>{
