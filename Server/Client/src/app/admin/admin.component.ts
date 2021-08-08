@@ -41,6 +41,7 @@ export class AdminComponent implements OnInit {
       this.httpClient.post(signurl,body,{'headers':headers})
       .subscribe(res=>{
         this.toastr.success(`${type} Account Saved!`);
+        window.location.reload();
       },
         err=>{
           this.toastr.error('Invalid Email or Password !');
