@@ -24,12 +24,13 @@ export class SignInComponent implements OnInit {
     else
     {
       //console.log(userName,password,type)
+      this.toastr.info('Please Wait !' );
       const headers={'content-type':'application/json'};
       const body={"email":userName,"password":password,"type":type};
       const signurl='login'
       this.httpClient.post(signurl,body,{'headers':headers})
       .subscribe(res=>{
-        this.toastr.info('Please Wait !');
+        //this.toastr.info('Please Wait !');
         this.toastr.success('Logged In Successfully !');
         if (type === 'Admin')
         {
