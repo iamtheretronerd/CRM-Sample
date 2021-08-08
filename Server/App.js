@@ -4,6 +4,7 @@ const app = express()
 const bodyparser = require('body-parser');
 const {MONGOURI} = require('./config/keys.js');
 const mongoose = require('mongoose')
+const path=require('path')
 mongoose.connect(MONGOURI,{
     useNewUrlParser: true,
     useUnifiedTopology: true
