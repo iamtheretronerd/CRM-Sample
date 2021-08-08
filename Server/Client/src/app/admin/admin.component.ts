@@ -36,7 +36,7 @@ export class AdminComponent implements OnInit {
       body={"email":userName,"password":password,"type":type,"name":name};
       else
       body={"email":userName,"password":password,"type":type,"name":name,"manager":manager};
-      const signurl='/signup'
+      const signurl='signup'
       this.httpClient.post(signurl,body,{'headers':headers})
       .subscribe(res=>{
         this.toastr.info('Please Wait !');
