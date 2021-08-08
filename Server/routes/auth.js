@@ -105,7 +105,7 @@ router.post('/signup',async (req,res)=>{
                     })
                     user.save()
                 })
-                Manager.findOneAndUpdate(manager, {
+                Manager.findOneAndUpdate({"name":manager}, {
                     $push: { Customers: { "Email": email, "Name": name } }
                 }, {
                     new: true
