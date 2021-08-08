@@ -9,7 +9,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class ManagerComponent implements OnInit {
   Customers:any =[];
-  reviews:String='';
+  reviews:any='';
   constructor(private router:Router,private httpClient:HttpClient,private toastr:ToastrService) { }
   ngOnInit(): void {
     const headers={'content-type':'application/json'};
