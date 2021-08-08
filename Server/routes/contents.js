@@ -13,7 +13,7 @@ router.post('/getCustomers', async (req,res)=>{
 })
 router.post('/sendMessage', async (req,res)=>{
     const {email,message}=req.body;
-        Customer.findOneAndUpdate(email, {
+        Customer.findOneAndUpdate({"email":email}, {
             $push: { messages: { "message": message} }
         }, {
             new: true
