@@ -4,7 +4,7 @@
   "description": "CRM server side",
   "main": "App.js",
   "scripts": {
-    "start": "node app",
+    "start": "node App.js",
     "heroku-postbuild": "cd Client && NPM_CONFIG_PRODUCTION=false && npm install && npm run build"
   },
   "keywords": [
