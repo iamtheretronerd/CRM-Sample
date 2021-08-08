@@ -20,7 +20,7 @@ export class CustomerComponent implements OnInit {
     const review=(<HTMLInputElement>document.getElementById('value')).value;
     console.log(review)
     const body={"email":email,"review":review};
-    this.httpClient.post('/review',body,{'headers':headers})
+    this.httpClient.post('review',body,{'headers':headers})
     .subscribe(res=>{
       (<HTMLInputElement>document.getElementById('value')).value="1";
       this.toastr.success('Review Posted !' );
@@ -30,7 +30,7 @@ export class CustomerComponent implements OnInit {
     const headers={'content-type':'application/json'};
     const email=localStorage.getItem('CRM-Customer');
     const body={"email":email};
-    this.httpClient.post('/getMessages',body,{'headers':headers})
+    this.httpClient.post('getMessages',body,{'headers':headers})
     .subscribe(res=>{
       this.Messages=res;
       console.log(res);
