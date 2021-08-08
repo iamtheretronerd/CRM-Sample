@@ -12,17 +12,8 @@ router.post('/getCustomers', async (req,res)=>{
     })
 })
 router.post('/sendMessage', async (req,res)=>{
-    var customers;
-    const message=req.body.message;
-    await Manager.find({email:req.body.email})
-    .then(result=>{
-        customers=(result[0].Customers)
-    })
-    //console.log(customers);
-    for (let i of customers)
-    {
-        console.log(i.Email);
-        Customer.findOneAndUpdate(i.Email, {
+    const {email,message}=req.body;
+        Customer.findOneAndUpdate(email, {
             $push: { messages: { "message": message} }
         }, {
             new: true
@@ -30,7 +21,6 @@ router.post('/sendMessage', async (req,res)=>{
         .exec((err, result) => {
            console.log('Pushed');
         })
-    }
     return res.status(201).json({ message: 'Message sent successfully !' });
 })
 router.post('/getMessages',async(req,res)=>{
